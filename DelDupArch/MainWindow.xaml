@@ -1,0 +1,31 @@
+﻿<Window x:Class="DelDupArch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DelDupArch"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="Delete Duplicate Archives" Height="483.395" Width="800">
+    <Grid Margin="0,0,0,19.8" HorizontalAlignment="Left" Width="790">
+        <TextBox x:Name="DirectoryTextBox" HorizontalAlignment="Left" Height="23" Margin="182,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475"/>
+        <Label Content="Directory to find duplicates" HorizontalAlignment="Left" Margin="23,23,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SelectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="675,26,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ListBox x:Name="FilesListBox" HorizontalAlignment="Left" Height="260" Margin="32,122,0,0" VerticalAlignment="Top" Width="718" SelectionMode="Multiple"/>
+        <Button x:Name="FindButton" Content="Find duplicates" HorizontalAlignment="Left" Margin="32,54,0,0" VerticalAlignment="Top" Width="115" Click="Button_Click_1"/>
+        <Button x:Name="ButtonDelete" Content="Delete duplicates" HorizontalAlignment="Left" Margin="28,395,0,0" VerticalAlignment="Top" Width="115" IsEnabled="False" Click="ButtonDelete_Click"/>
+        <Label Content="Pre/Suffix Duplicate Files" HorizontalAlignment="Left" Margin="546,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.407,-0.41"/>
+        <TextBox x:Name="PreSuffix" HorizontalAlignment="Left" Height="23" Margin="691,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" TextChanged="PreSuffix_TextChanged"/>
+        <Button x:Name="ButtonAll" Content="Select All" HorizontalAlignment="Left" Margin="675,395,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAll_Click" IsEnabled="False"/>
+        <CheckBox  x:Name="MaintainOriginal" Content="Include all duplicate files except first original file found" HorizontalAlignment="Left" Margin="160,57,0,0" VerticalAlignment="Top" Width="310" IsChecked="true" Checked="MaintainOriginal_Checked"/>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="19" Margin="284,396,0,0" VerticalAlignment="Top" Width="255"/>
+        <Label x:Name="FilesFound" Content="Duplicated Files: 0" HorizontalAlignment="Left" Margin="152,395,0,0" VerticalAlignment="Top" Width="119"/>
+        <Label x:Name="TimeLabel" Content="Time: " HorizontalAlignment="Left" Margin="558,392,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label x:Name="FileProgress" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden" Content="Label" HorizontalAlignment="Center" Margin="293,387,277,0" VerticalAlignment="Top" RenderTransformOrigin="-0.606,-0.502" Width="220" Height="37"/>
+        <Label x:Name="TextProgress" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Visible" HorizontalAlignment="Center" Margin="293,387,277,0" VerticalAlignment="Top" RenderTransformOrigin="-0.606,-0.502" Width="220" Height="37"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="471,57,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click" IsEnabled="False"/>
+        <ComboBox x:Name="ComboThreads" HorizontalAlignment="Left" Margin="161,88,0,0" VerticalAlignment="Top" Width="82" IsEditable="False"/>
+        <Label Content="Number of Threads" HorizontalAlignment="Left" Margin="34,87,0,0" VerticalAlignment="Top" Width="113"/>
+
+    </Grid>
+</Window>
